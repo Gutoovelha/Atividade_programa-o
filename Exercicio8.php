@@ -3,7 +3,7 @@
 print "\nQuantos cigarros você fuma por dia?:";
 $cigarros_por_dia=fgets(STDIN);
 
-print "\nQuantos anos você fuma,?:";
+print "\nQuantos anos você fuma?:";
 $anos_fumados=fgets(STDIN);
 
 $cigarros_fumados=$cigarros_por_dia*365*$anos_fumados;
