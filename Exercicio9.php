@@ -1,5 +1,5 @@
 <?php 
- print "Quantos metros quadrados você vai pintar? 2";
+ print "Quantos metros quadrados você vai pintar?";
  $metros = (float) fgets(STDIN);
  print "\n\n";
 
