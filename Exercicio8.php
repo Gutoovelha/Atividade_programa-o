@@ -1,10 +1,9 @@
 <?php
+print "Quantos cigarros você fuma por dia?\n";
+$cigarros_por_dia=(int)fgets(STDIN);
 
-print "\nQuantos cigarros você fuma por dia?:";
-$cigarros_por_dia=fgets(STDIN);
-
-print "\nQuantos anos você fuma?:";
-$anos_fumados=fgets(STDIN);
+print "\nQuantos anos você fuma?\n";
+$anos_fumados=(int)fgets(STDIN);
 
 $cigarros_fumados=$cigarros_por_dia*365*$anos_fumados;
 $minutos_perdidos=$cigarros_fumados*10;
