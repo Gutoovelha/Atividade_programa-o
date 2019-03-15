@@ -1,38 +1,26 @@
-<?php 
- print "Quantos metros quadrados você vai pintar?";
- $metros = (float) fgets(STDIN);
- print "\n\n";
-
- $tinta_para_ser_usada = $metros/6;
-
- $latas    = ceil($tinta_para_ser_usada/18);
- $prec_lat = $latas*80;
- $galoes   = ceil($tinta_para_ser_usada/3.6);
- $prec_gal = ($galoes)*25;
-
-
-
- print "Preço da lata de 18 litros: R$80,00\n";
- print "Preço do galão de 3,6 litros: R$25,00\n";
-
- print "Opção 1: somente em latas. \nOpção 2: comprar apenas em galões \nOpção 3: misturar latas e galões, de forma que o preço seja o menor. \n";
- $opc = fgets(STDIN);
-
- switch ($opc){
-    case 1:
-        print "Vocẽ comprará $latas lata(s) de tinta no preço de $prec_lat\n";
-        break;
+<?php
+print "Digite o tamanho em metros quadrados da área a ser pintada:";
+$areapintada = fgets(STDIN);
+    $area_folga = $areapintada+(($areapintada*10)/100);
+    $quantidade_lata = ceil($area_folga/108);  
+    $preco_lata = $quantidade_lata*80; 
+print "Você precisará de $quantidade_lata lata(s) de 18L. \n";
+print "O preço será de " .'R$' ."$preco_lata. \n";
+print "\n";
+print "ou \n";
+    $quantidade_galao = ceil($area_folga/21.6);
+    $preco_galao = $quantidade_galao*25;
+print "Você precisará de $quantidade_galao galão(ões) de 3,6L. \n";
+print "O preço será de R$ $preco_galao. \n";
+print "\n";
+print "ou \n";
+    $quantidade_galao2 = $quantidade_galao;
+    $quantidade_lata2 = 0;
     
-    case 2:
-        print "Vocẽ comprará $galoes galão(es) de tinta no preço de $prec_gal\n";
-        break;
-    
-    case 3:
-        $a1 = $latas%18;
-        $a2 = ceil($a1/3.6);
-        $a3 = ($latas*80)+($a2*25);
-        $a4 = ($a3)-($a3*0.10);    
-        print "Vocẽ comprará $latas lata(s) e $a2 galão(es) de tinta no preço de: R\$$a4\n";
-        break;
-}
-?>
+ while ($quantidade_galao2 >= 5) {
+    $quantidade_lata2 = $quantidade_lata2 + 1;
+    $quantidade_galao2 = $quantidade_galao2 - 5;
+ }
+      $total_a_pagar = ($quantidade_galao2*25)+($quantidade_lata2*80);
+print "Você precisará de $quantidade_galao2 galão(ões) e $quantidade_lata2 lata(s) de tinta. \n";
+print "O total a pagar será de " .'R$' ."$total_a_pagar";
